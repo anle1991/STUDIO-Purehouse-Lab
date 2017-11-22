@@ -1,0 +1,93 @@
+<div id="container">
+            <div class="row">
+                <div class="col col-centered">
+                    <br>
+                    <center>
+                        <img src="http://www.xsjjys.com/data/out/96/WHDQ-512397052.jpg" width="20%">
+                        <h3>{{profile.first}} {{profile.last}}</h3>
+                        <h5>{{profile.profession}}</h5>
+                        <button type="button" class="btn btn-primary" id="contactButton">Contact</button>                        
+                    </center>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-8 col-centered">
+
+                            <h4 id="description">Description</h4>
+                            <p>lorem advoar a af vs rvs erfservwe rwerv wergwe rwerfb werg e vadcaer vervwervwer vwerv werwergwer wervwer wervwerv wervwefvwthe5yjrtyertrttyh wreg sb srtbwrt wgwt4 wer we rv. /lorem</p>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-8 col-centered">
+                            <h4>Experience</h4>
+                            {{#each profile.experiences}}
+                                <div class="experienceItem">
+                                    <h5>{{this.employer}}</h5>
+                                        <ul>
+                                            {{#each this.description}}
+                                                <li>{{this}}</li>
+                                            {{/each}}
+                                        </ul>
+                                    
+                                </div>
+                            {{/each}}
+                            <!--
+                            <ul id="experienceList">
+                                <li><p>hi</p></li>
+                            </ul>
+                            -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            \{{#if projectcompleted && collaborated && !previouslyrated}}
+                <a href="#head"><button id="rateButton" class="btn btn-danger">Rate</button></a>
+            \{{/if}}
+            <input type="hidden" id="profileID" value="{{profile.id}}">
+            <input type="hidden" id="userID" value="{{user.id}}">
+        </div>
+
+        
+
+        <div class="modal fade" id="contactModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-header">
+                        <div class="modal-title"><h3 class="header">Contact {{profile.first}} {{profile.last}}</h3></div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                        <div class="row"><div class="col-sm-5"><strong>Email Address:</strong></div> <div class="col-sm-7"><a href="mailto:{{email}}">{{profile.email}}</a></div></div>
+                        <div class="row"><div class="col-sm-5"><strong>OR</strong></div></div>
+                        <div class="row"><div class="col-sm-5"><strong>Direct Message</strong></div> <div class="col-sm-7"><textarea required style="resize: none" rows="4" cols="20" id="messageBody"></textarea></div></div>
+                        <div class="row"><button type="button" class="btn btn-primary" id="messageSend">Send</button></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                    </div>
+        </div>
+
+        <div class="modal fade" id="rateModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-header">
+                    <div class="modal-title"><h3>Rate {{profile.first}} {{profile.last}}</h3></div>
+                </div>
+                <div class="modal-body">
+                    <div id="rateYo" class="col-centered"></div>
+                    <input type="hidden" id="rating_input">
+                    <br>
+                    <div class="row"><div class="col-sm-4"><strong>Leave Review</strong></div> <div class="col-sm-8"><textarea required style="resize: none" rows="4" cols="25" placeholder="Your review here..." id="reviewBody"></textarea></div></div>
+                </div>
+                <div class="modal-footer">
+                    <div class="row"><button type="button" class="btn btn-primary" id="reviewSubmit">Submit</button></div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>

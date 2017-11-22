@@ -1,0 +1,37 @@
+ul.roleRequirements > li {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
+#bluebox {
+  float: left;
+  width: 785px;
+  height: 600px;
+  padding-right: 100px;
+  background-color: #ef5350;
+  /*think this goes too low*/
+}
+
+#anna {
+  padding-right: 20px;
+  padding-left: 50px;
+}
+
+.roleIcon {
+  /*display:flex;*/
+  display: block;
+  margin: auto;
+  /*vertical-align: middle;*/
+  height: auto;
+  margin-top: 30%;
+  margin-left: 40%;
+  width: 30%;
+}
+
+#whole{
+  padding-top: 30px;
+}
+
+.roletitle:hover {
+  cursor: pointer;
+}

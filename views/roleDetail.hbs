@@ -1,0 +1,44 @@
+<div class="row" id="whole">
+  <div class="col s6 m6"id="anna" >
+
+    <!-- <div class="card" id="an" style="background-color: #FFFFFF"> -->
+      <div class="card-content white-text">
+        <span class="card-title" style="color: #ef5350"><h5><strong>{{role.name}}</strong></h5></span>
+        <hr>
+        <h5 style="color: black">{{role.description}}</h5>
+        <br>
+        {{#if role.responsibilities}}
+          <h5 style="color: #ef5350">Responsibilities</h5>
+          <ul class="roleRequirements" style="color: #818181">
+            {{#each role.responsibilities}}
+              <li>{{text}}</li>
+            {{/each}}
+          </ul>
+        {{/if}}
+      </div>
+
+      <div class="card-action">
+        <a class="waves-effect waves-light btn modal-trigger" href="#modal1" style="background-color: #ef5350">I'm Interested!</a>
+      </div>
+    <!-- </div> -->
+    <b></b>
+
+  </div>
+
+
+
+    <div id="bluebox" class="col s6 m6 z-depth-2">
+      <img src="./img/tablet-and-laptop.png" alt="mediaImg" class="roleIcon">
+    </div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+    <p>A bunch of text</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
+</div>

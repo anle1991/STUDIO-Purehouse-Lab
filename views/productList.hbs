@@ -1,0 +1,43 @@
+<!--  Sidebar -->
+<ul id="nav-mobile sidenav" class="side-nav fixed">
+  <li>
+    <div class="user-view" id="sidenav">
+      <div class="background z-depth-1">
+
+      </div id="sidenav_top">
+        <a href="#!user"><img class="circle" src="img/TwistedT.jpg"></a>
+        <a href="#!name"><span class="white-text name">Cornell Tech</span></a>
+        <a href="#!email"><span class="black-text email"></span></a>
+      </div>
+
+  </li>
+  <li><a class="subheader">Categories</a></li>
+  <li><a href="#!"><i class="material-icons">attach_money</i>FinTech</a></li>
+  <li><a href="#!"><i class="material-icons">school</i>EdTech</a></li>
+  <li><a href="#!"><i class="material-icons">watch</i>Wearable</a></li>
+  <li><a href="#!"><i class="material-icons">settings_remote</i>IOT</a></li>
+  <li><a href="#!"><i class="material-icons">store</i>Retails</a></li>
+  <li><a href="#!"><i class="material-icons">live_tv</i>Media</a></li>
+  <li><a href="#!"><i class="material-icons">people</i>Social</a></li>
+  <li><a href="#!"><i class="material-icons">local_florist</i>Nonprofit</a></li>
+  <li><div class="divider"></div></li>
+</ul>
+
+<!-- Middle Content -->
+<div class="row center">
+    <div class="section no-pad-bot" id="index-banner">
+        <h4 class="col 12 header red-text" id="title">Projects</h4>
+    </div>
+    <h5 class="col 12 header grey-text right" id="filter"><i class="material-icons">filter_list</i></h5>
+</div>
+
+<div class="section">
+  <div class="row" id="middle_content">
+
+    {{#each products}}
+      {{> productListing}}
+    {{/each}}
+
+  </div>
+
+</div>

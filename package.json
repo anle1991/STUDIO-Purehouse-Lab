@@ -1,0 +1,34 @@
+{
+  "name": "pinlab",
+  "version": "1.0.0",
+  "description": "Creating the ideal teams for ideas.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rramphal100/purehouse.git"
+  },
+  "author": "Ryan Ramphal, An Le, Anna Guidi, Will Davis, Xiao \"Barron\" Zuo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rramphal100/purehouse/issues"
+  },
+  "homepage": "https://github.com/rramphal100/purehouse#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "dotenv-safe": "^4.0.4",
+    "express": "^4.16.2",
+    "express-firebase-middleware": "^1.0.0",
+    "express-handlebars": "^3.0.0",
+    "firebase": "^4.6.1",
+    "firebase-admin": "^5.5.0",
+    "hbs": "^4.0.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
