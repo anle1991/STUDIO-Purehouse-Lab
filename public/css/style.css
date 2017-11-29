@@ -28,3 +28,11 @@
 .glyphicon-star{
     width: 50px;
 }
+
+#creatorname:hover{ 
+    cursor: pointer;
+}
+
+.productcard:hover{
+    cursor: pointer;
+}

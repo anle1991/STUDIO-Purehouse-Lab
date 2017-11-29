@@ -62,14 +62,28 @@ app.post('/product', function(req,res){
 
     console.log(JSON.stringify(curRoles));
 
-    res.render('productDetails', {pageTitle: curProduct.name, user: req.cookies.user, product: curProduct,
-        roles: curRoles, css: ['sidenav.css', 'productDetails.css', 'review.css']}); 
+    res.render('productDetails', {pageTitle: curProduct.name, user: req.cookies.user, product: curProduct, productId: req.body.projectid,
+        roles: curRoles, css: ['sidenav.css', 'productDetails.css', 'review.css']});
+});
+
+
+app.post('/team', function(req,res,next){
+    let curProduct = products[parseInt(req.body.projectId)];
+    let teammates = [];
+    for(let id of curProduct.creators){
+        console.log('teammate id: ' + id);
+        teammates.push(profiles[id]);
+    }
+
+    res.render('creatorDetails', {user: req.cookies.user, pageTitle: req.body.projectName, teammates: teammates,
+        teamdescription: curProduct.teamdescription, productname: curProduct.name, teampic: curProduct.teampic,
+        css: ['sidenav.css', 'creatorDetails.css']});
 });
 
 app.post('/roledetails', function(req,res,next){
     let curRole = roles[parseInt(req.body.roleid)];
-    console.log(JSON.stringify(curRole.responsibilities));
-    res.render('roleDetail', {pageTitle: curRole.name, user: req.cookies.user, role: curRole});
+    console.log(req.body.productname);
+    res.render('roleDetail', {pageTitle: curRole.name, user: req.cookies.user, role: curRole, productname: req.body.productname});
 });
 
 // Route for handling login requests
@@ -98,7 +112,6 @@ app.get('/schoolselect', function(req,res,next){
     res.render('schoolselect', {user: req.cookies.user, layout: false});
 });
 
-
 app.get('/home', function(req,res){
     res.render('home');
 });
@@ -117,10 +130,7 @@ app.get('/profiles', function(req, res){
     }
 });
 
-hostport = 8080;
-if (process.env.NODE_ENV === 'PRODUCTION'){
-    hostport = 80;
-}
+var hostport = process.env.PORT || 8080;
 
 app.listen(hostport, function(){
     console.log("PinLab is running on port " + hostport.toString());

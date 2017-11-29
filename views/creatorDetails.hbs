@@ -1,0 +1,68 @@
+<!--  Sidebar -->
+<ul id="nav-mobile sidenav" class="side-nav fixed">
+  <li>
+    <div class="user-view" id="sidenav">
+      <div class="background z-depth-1">
+
+      </div id="sidenav_top">
+        <a href="#!user"><img class="circle" src="img/TwistedT.jpg"></a>
+        <a href="#!name"><span class="white-text name">Cornell Tech</span></a>
+        <a href="#!email"><span class="black-text email"></span></a>
+      </div>
+
+  </li>
+  <li><a class="subheader">Categories</a></li>
+  <li><a href="#!"><i class="material-icons">attach_money</i>FinTech</a></li>
+  <li><a href="#!"><i class="material-icons">school</i>EdTech</a></li>
+  <li><a href="#!"><i class="material-icons">watch</i>Wearable</a></li>
+  <li><a href="#!"><i class="material-icons">settings_remote</i>IOT</a></li>
+  <li><a href="#!"><i class="material-icons">store</i>Retails</a></li>
+  <li><a href="#!"><i class="material-icons">live_tv</i>Media</a></li>
+  <li><a href="#!"><i class="material-icons">people</i>Social</a></li>
+  <li><a href="#!"><i class="material-icons">local_florist</i>Nonprofit</a></li>
+  <li><div class="divider"></div></li>
+</ul>
+
+
+<!-- Middle Content -->
+    <div class="" id="card">
+        <div class="card horizontal" >
+          <div id="middle_content">
+
+            <div class="">
+                <div id="header">
+                  <h4 class="header">Team: {{productname}}</h4>
+                </div>
+                <div class="row" id="description">
+                    <span class="left"><h6>{{teamdescription}}</h6></span>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col s12 m7" id="card">
+        <div class="card horizontal" id="cardvideo" >
+            <img width="1000" height="562" src="{{teampic}}">
+        </div>
+    </div>
+
+    <div class="col 12 m7" id="card">
+      <ul class="collection" id="creatorList">
+        {{#each teammates}}
+        <li class="collection-item avatar">
+          <img src="{{profilepic}}" alt="" class="circle grey">
+          <span class="title" style="font-weight: bold">{{name}}</span>
+          <p>{{title}} <br>
+             {{tag}}
+          </p>
+          <a href="#!" class="secondary-content"><i class="material-icons">person</i></a>
+        </li>
+        {{/each}}
+      </ul>
+  </div>
+
+
+
+      </div>
+    </div>
